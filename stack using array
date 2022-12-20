@@ -1,24 +1,24 @@
-\\Stack using array implmentation\\
-#include <stdio.h> 
+//Stack using array implmentation//
+#include <stdio.h> //standard input output header file//
 #include <stdlib.h> 
-#define size 4 
+#define size 4 //declaring the size//
 
-int top =-1; 
+int top =-1; //declaring the initial value of stack as -1// 
 int arr[size]; 
 
-void push(); 
-void pop(); 
-void show(); 
+void push(); //push function//
+void pop(); //pop function//
+void show(); // show function//
 
-int main() 
+int main() //main function//
 { 
         int choice; 
         while(1) 
         { 
-            printf("select the operation\n"); 
+            printf("select the operation\n"); //displaying the operation//
             printf("\n 1.Push\n 2.Pop\n 3.Display\n 4.Exit\n"); 
             scanf("%d",&choice); 
-            switch(choice) 
+            switch(choice) //switching to operation choice//
             { 
             case 1: 
                 push(); 
@@ -30,16 +30,16 @@ int main()
                 show(); 
             case 4: 
                 exit(0); 
-            default:printf("invalid choice\n"); 
+            default:printf("invalid choice\n"); //default case if none of the cases are invalid//
             } 
         } 
 } 
 
   
-void push() 
+void push() //push function//
 { 
-    int n; 
-    if(top==size-1) 
+    int n; //declaring an integer//
+    if(top==size-1) //checking if the top is full or not//
     { 
         printf("overflow"); 
     } 
@@ -47,30 +47,31 @@ void push()
     { 
         printf("enter the element to be inserted\n"); 
         scanf("%d",&n); 
-        top++; 
+        top++; //adding an element to stack//
         arr[top]=n; 
     } 
 } 
 
   
-void pop() 
+void pop() //pop function//
 { 
-    if (top==-1) 
+    if (top==-1) //checking if the top is empty or not//
     { 
         printf("underflow"); 
     } 
     else 
+    
     { 
         printf("removed element %d\n",arr[top]); 
-        top--; 
+        top--; //removing an element from the stack//
     } 
 } 
 
   
-void show() 
+void show() //show function//
 { 
-    int i; 
-    if(top!=-1) 
+    int i; //declaring a new integer//
+    if(top!=-1) //if top is not equal to -1 then display will happen//
     { 
         for(i=0;i<top;i++) 
         { 
@@ -80,7 +81,7 @@ void show()
     } 
     else 
     { 
-        printf("Stack is empty\n"); 
+        printf("Stack is empty\n"); //if stack is equal to -1//
     } 
 } 
 
